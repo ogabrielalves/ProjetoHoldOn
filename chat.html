@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/chat.css">
+  <link rel="shortcut icon" href="assets/img/Icone.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+  <title>Chat</title>
+</head>
+
+<body>
+  <div class="caixa-preta">
+    <button onclick="encerrar()">Encerrar</button>
+    <h1 class="titulo">CHAT DE AJUDA</h1>
+    <div class="conectado">
+      <img id="fotoPerfil" src="assets/img/icone-cara.png">
+      <h1 id="voluntarioConectado">A</h1>
+      <img id="denunciar" src="assets/img/denuncia.png" alt="">
+      <h3 onclick="denuncia()" class="btDenunciar">Denunciar</h3>
+    </div>
+    <div id="mensagem" class="caixa-branca">
+      <p style="color: #2FA4BA;">Você esta conectado com: <b id="voluntario"></b></p>
+    </div>
+    <input id="mensagenzin" placeholder="Escreva aqui" type="text" autofocus>
+    <button onclick="enviar()">Enviar</button>
+  </div>
+</body>
+
+</html>
+
+<script>
+  var texto = [];
+  var nomevoluntario = ['Willian', 'Sabrina', 'Gabriel', 'Ingrid', 'Lucas', 'Marcela', 'Caio'];
+  var aleatorio = parseInt(Math.random() * 7);
+
+  voluntario.innerHTML = `${nomevoluntario[aleatorio]}`;
+  voluntarioConectado.innerHTML = `${nomevoluntario[aleatorio]}`;
+
+  if (nomevoluntario[aleatorio] == 'Sabrina' || nomevoluntario[aleatorio] == 'Ingrid' || nomevoluntario[aleatorio] == 'Marcela') {
+    fotoPerfil.src = "assets/img/icone-mina.png";
+  }
+
+  function enviar() {
+    var mensagemdetexto = mensagenzin.value;
+    texto.push(mensagemdetexto);
+    
+    if (mensagemdetexto == '') {
+      alert('Insira algo');
+    } else {
+      mensagem.innerHTML += `<p><span><b>Você:</b> ${texto[texto.length - 1]}</p></span>`;
+      document.getElementById('mensagenzin').value = ``;
+    }
+    
+    if (mensagemdetexto == 'oi' || mensagemdetexto == 'Oi' || mensagemdetexto == 'Ola' || mensagemdetexto == 'Olá' || mensagemdetexto == 'ola' || mensagemdetexto == 'olá') {
+      mensagem.innerHTML += `<p><novospan><b>${nomevoluntario[aleatorio]}:</b> Olá, me chamo ${nomevoluntario[aleatorio]}, tudo bem com você?<novospan></p>`;
+    }
+
+  }
+
+  function denuncia() {
+    var respotaDenuncia = prompt("Qual o motivo da denuncia?");
+
+    if (respotaDenuncia == "") {
+      alert('Insira um motivo!')
+      respotaDenuncia = prompt("Qual o motivo da denuncia?");
+    }
+
+    else {
+      alert('Denuncia registrada com sucesso!')
+    }
+  }
+
+  function encerrar() {
+    window.location.href = "meajude.html"
+  }
+
+</script>

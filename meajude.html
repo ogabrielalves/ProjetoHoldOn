@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/meajude.css">
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/botoestop.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/Icone.png" type="image/x-icon">
+    <title>Hold On - Login</title>
+</head>
+
+<body>
+    <header>
+        <a href="Index.html"><img src="assets/img/Logo.png" alt=""></a>
+        <nav>
+            <li><a href="Index.html">Início</a></li>
+            <li><a href="comofunciona.html">Como funciona</a></li>
+            <li><span>Preciso Conversar</span></li>
+            <li><a href="contato.html">Contato</a></li>
+        </nav>
+        <div class="botoestop">
+            <button onclick="entrar()" class="entrar">Entrar</button>
+            <button onclick="cadastro()" class="cadastro">Cadastrar</button>
+        </div>
+    </header>
+
+    <div d="ajudar" class="login">
+
+        <h1>Precisando conversar?</h1>
+        <b>* Não é necessário usar seu nome verdadeiro!</b>
+        <input id="idNome" placeholder="Insira seu nome" type="text">
+        <b>Entrar como anônimo</b>
+        <input onclick="anonimo()" type="checkbox">
+        <button onclick="encontrar()" class="encontrar">Encontrar suporte</button>
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    function encontrar() {
+        window.location.href = "chat.html"
+    }
+</script>

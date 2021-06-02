@@ -1,0 +1,117 @@
+* {
+  font-family: 'Arimo', sans-serif;
+}
+
+body {
+  background-color: #1d1d1d;
+}
+
+.caixa-preta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo {
+  color: #FF0065;
+}
+
+.caixa-branca {
+  background-color: #e6eaeb;
+  width: 60vw;
+  height: 50vh;
+  /* text-align: center; */
+  padding: 0 20px;  
+}
+
+.conectado {
+  background-color: #f5f5f5;
+  height: 7vh;
+  width: 60vw;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.conectado h1 {
+  padding-left: 1vw;
+}
+
+#denunciar {
+  width: 3%;
+  padding-left: 50%;
+  padding-right: 10px;
+}
+
+.btDenunciar:hover {
+  color: red;
+  cursor: pointer;
+}
+
+#fotoPerfil {
+  width: 5%;
+}
+
+input {
+  margin-top: 20px;
+  width: 25%;
+  height: 4vh;
+  outline: none;
+  transition: 0.5s;
+  border-radius: 10px;
+  border: 2px solid grey;
+}
+
+input:hover {
+  background-color: rgb(189, 189, 189);
+}
+
+input:focus {
+  width: 26%;
+  transition: 0.90s;
+  background-color: rgb(189, 189, 189);
+}
+
+button {
+  margin-top:  15px;
+  border: 1px solid #FF0065;
+  font-size: 1rem;
+  /* border-radius: 15px; */
+  padding: 10px 20px;
+  outline: none;
+  background-color: #FF0065;
+  color: white;
+  transition: 0.75s;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #FF0065;
+  background-color: transparent;
+  transition: 0.75s;
+}
+
+span {
+  background-color: #79e398;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+novospan {
+  background-color: #80cddd;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+p {
+  margin-bottom: 30px;
+}

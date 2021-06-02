@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/cadastro.css">
+    <script src="assets/js/validacoes.js"></script>
+    <script src="assets/js/botoestop.js"></script>
+    <script src="assets/js/endereco.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="assets/img/Icone.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <title>Hold On - Cadastro</title>
+</head>
+
+<body>
+    <header>
+        <a href="Index.html"><img src="assets/img/Logo.png" alt=""></a>
+        <nav>
+            <li><a href="Index.html">Início</a></li>
+            <li><a href="">Como funciona</a></li>
+            <li><a href="login.html">Preciso Conversar</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </nav>
+        <div class="botoestop">
+            <button onclick="entrar()" class="entrar">Entrar</button>
+            <button onclick="cadastro()" class="cadastro">Cadastrar</button>
+        </div>
+    </header>
+
+    <div id="voluntariar" class="login">
+        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+            <h1>Preencha os campos</h1>
+            <input onkeyup="validarNome()" name="nome" class="areadetexto" id="idNome" placeholder="Insira seu nome" type="text">
+            <input onkeyup="validarSobrenome()" name="sobrenome" class="areadetexto" id="idSobrenome" placeholder="Insira seu sobrenome" type="text">
+            <br>
+            <input name="cpf" onkeyup="validarCPF()" class="areadetexto" id="idCPF" placeholder="Insira seu CPF" type="text">
+            <input name="dataNasc" onkeyup="validarData()" class="areadetexto" id="idData" placeholder="Insira a data do seu nascimento" type="date">
+            <br>
+            <input name="cep" class="areadetexto" onblur="pesquisacep(this.value)" id="idCep" placeholder="Insira seu CEP"
+                type="text">
+            <input name="cidade" class="areadetexto" id="cidade" placeholder="Cidade" type="text">
+            <br>
+            <input name="estado" class="areadetexto" id="uf" placeholder="Estado" type="text">
+            <input name="bairro" class="areadetexto" id="bairro" placeholder="Bairro" type="text">
+            <br>
+            <input name="rua" class="areadetexto" id="rua" placeholder="Rua" type="text">
+            <input name="email" onkeyup="validarEmail()" class="areadetexto" id="idEmail" placeholder="Insira seu email" type="email">
+            <br>            
+            <input name="telefone" class="areadetexto" onkeyup="validarTelefone()" id="idTelefone" placeholder="Insira seu telefone" type="tel">
+            <input name="senha" onkeyup="validarSenha()" class="areadetexto" id="idSenha" placeholder="Insira sua senha" type="password">
+           
+            <br>
+            <input class="logar" type="submit" value="Cadastrar">
+        </form>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrarvoluntario", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+
+                window.location.href = 'login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                // finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    // function aguardar() {
+    //     btn_entrar.disabled = true;
+    //     img_aguarde.style.display = 'block';
+    //     div_erro.style.display = 'none';
+    // }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display = 'none';
+        div_erro.style.display = 'block';
+    }
+</script>

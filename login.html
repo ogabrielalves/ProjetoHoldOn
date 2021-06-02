@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/botoestop.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="assets/img/Icone.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <title>Hold On - Login</title>
+</head>
+
+<body>
+    <header>
+        <a href="Index.html"><img src="assets/img/Logo.png" alt=""></a>
+        <nav>
+            <li><a href="Index.html">Início</a></li>
+            <li><a href="">Como funciona</a></li>
+            <li><a href="meajude.html">Preciso Conversar</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </nav>
+        <div class="botoestop">
+            <button onclick="entrar()" class="entrar">Entrar</button>
+            <button onclick="cadastro()" class="cadastro">Cadastrar</button>
+        </div>
+    </header>
+
+    <div id="voluntariar" class="login">
+        <form id="form_login" method="post" onsubmit="return entrar()">
+            <h1>Seja bem-vindo, voluntário!</h1>
+            <input onkeyup="validarEmail()" id="idEmail" name="email" placeholder="Insira seu email" type="email">
+            <input onkeyup="validarSenha()" id="idSenha" name="senha" placeholder="Insira sua senha" type="password">
+            <button class="logar">Entrar</button>
+        </form>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function entrar() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login_html;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'painel.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    // function aguardar() {
+    //     btn_entrar.disabled = true;
+    //     img_aguarde.style.visibility = 'visible';
+    //     div_erro.style.visibility = 'hidden';
+    // }
+
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        img_aguarde.style.visibility = 'hidden';
+        div_erro.style.visibility = 'visible';
+        div_erro.innerHTML = resposta;
+    }
+
+</script>

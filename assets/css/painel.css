@@ -1,0 +1,153 @@
+* {
+    box-shadow: none !important;
+    text-decoration: none !important;
+    font-family: 'Arimo', sans-serif;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+/* PAINEL */
+
+#topo-painel {
+    background-color: #31383e;
+    height: 15vh;
+    border-bottom: 5px solid #464e55;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#topo-painel img {
+    width: 50%;
+}
+
+#painel {
+    background-color: #3d454d;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+#painel span {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: .75s;
+}
+
+#painel a {
+    color: white;
+}
+
+#painel span {
+    color: white;
+}
+
+#painel span:hover {
+    color: rgb(35, 236, 79);
+}
+
+#painel a:hover {
+    color: #ee5c5c;
+}
+
+#painel img {
+    margin-left: 40%;
+}
+
+/* PERFIL */
+
+#perfil {
+    /* background-color: red; */
+    text-align: center;
+}
+
+
+.perfil {
+    justify-content: space-between;
+    display: flex;
+}
+
+.item-perfil img {
+    border: 1px solid black;
+    width: 80%;
+}
+
+
+
+
+/* CHAT */
+
+#chat {
+    background-color: #e6eaeb;
+    height: 60vh;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#topchat {
+    background-color: #f5f5f5;
+    height: 7vh;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    display: flex;
+    align-items: center;
+}
+
+#topchat img {
+    width: 5%;
+}
+
+#input_chat {
+    width: 30vw;
+    outline: none;
+    border: none;
+    border: 1px solid black;
+}   
+
+#pai-input-chat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#bt-chat {
+    background-color: #FF0065;
+    border: 1px solid #FF0065;
+    color: white;
+    transition: .75s;
+    margin-left: 10px;
+}
+
+#bt-chat:hover {
+    background-color: transparent;
+    color: #FF0065;
+}
+
+p {
+    margin-bottom: 30px;
+  }
+
+spanchat {
+    background-color: #79e398;
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+spannovo {
+    background-color: #80cddd;
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+  

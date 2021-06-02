@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/cadastro2.css">
+    <script src="assets/js/validacoes.js"></script>
+    <script src="assets/js/botoestop.js"></script>
+    <script src="assets/js/endereco.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="assets/img/Icone.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <title>Hold On - Cadastro</title>
+</head>
+
+<body>
+    <header>
+        <a href="Index.html"><img src="assets/img/Logo.png" alt=""></a>
+        <nav>
+            <li><a href="Index.html">Início</a></li>
+            <li><a href="">Como funciona</a></li>
+            <li><a href="login.html">Preciso Conversar</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </nav>
+        <div class="botoestop">
+            <button onclick="entrar()" class="entrar">Entrar</button>
+            <button onclick="cadastro()" class="cadastro">Cadastrar</button>
+        </div>
+    </header>
+
+    <div id="voluntariar" class="login">
+        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+            <h1>Preencha os campos</h1>
+            <input name="nome" onkeyup="validarNome()" class="areadetexto" id="idNome" placeholder="Insira o nome do responsavel" type="text">
+            <input name="sobrenome" onkeyup="validarSobrenome()" class="areadetexto" id="idSobrenome" placeholder="Insira o sobrenome" type="text">
+            <input name="cpf"  onkeyup="validarCPF()" class="areadetexto" id="idCPF" placeholder="Insira o CPF" type="text">
+            
+            <input class="logar" type="submit" value="Próximo">
+        </form>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrarresponsavel", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+
+                window.location.href = 'cadastro3.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                // finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    // function aguardar() {
+    //     btn_entrar.disabled = true;
+    //     img_aguarde.style.display = 'block';
+    //     div_erro.style.display = 'none';
+    // }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display = 'none';
+        div_erro.style.display = 'block';
+    }
+</script>

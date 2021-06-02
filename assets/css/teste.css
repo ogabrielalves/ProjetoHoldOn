@@ -1,0 +1,64 @@
+* {
+  font-family: 'Arimo', sans-serif;
+}
+
+body {
+  background-color: #1d1d1d;
+}
+
+.caixa-preta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 50%;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.caixa-preta h1 {
+  color: #FF0065;
+}
+
+.caixa-branca {
+  background-color: white;
+  width: 35vw;
+  height: 35vh;
+  border: 2px solid grey;
+  /* text-align: center; */
+}
+
+input {
+  margin-top: 20px;
+  width: 25%;
+  height: 4vh;
+  outline: none;
+  transition: 0.75s;
+}
+
+input:focus {
+  width: 28%;
+  transition: 0.90s;
+}
+
+button {
+  margin-top:  15px;
+  border: 1px solid #FF0065;
+  font-size: 1rem;
+  /* border-radius: 15px; */
+  padding: 10px 20px;
+  outline: none;
+  background-color: #FF0065;
+  color: white;
+  transition: 0.75s;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #FF0065;
+  background-color: transparent;
+  transition: 0.75s;
+}

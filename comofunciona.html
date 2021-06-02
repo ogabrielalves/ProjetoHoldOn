@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="assets/js/botoestop.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/Icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/comof.css">
+    <title>Hold On</title>
+</head>
+
+<body>
+    <header>
+        <a href="Index.html"><img src="assets/img/Logo.png" alt=""></a>
+        <nav>
+            <li><a href="Index.html">Início</a></li>
+            <li><span>Como funciona</span></li>
+            <li><a href="meajude.html">Preciso Conversar</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </nav>
+        <div class="botoestop">
+            <button onclick="entrar()" class="entrar">Entrar</button>
+            <button onclick="cadastro()" class="cadastro">Cadastrar</button>
+        </div>
+    </header>
+    <div class="about-us">
+        <h1>COMO FUNCIONA</h1>
+    </div>
+    <div class="sobre">
+        <img src="assets/img/Icone.png" alt="">
+        <div class="textos-sobre">
+           <p><b>Hold On </b>é um projeto totalmente gratuito feito para pessoas que precisam conversar e para
+                pessoas que estão dispostas a ouvir.
+            </p>
+            <p>Caso queira conversar com alguém sobre o seu dia, ou algum problema, basta
+                clicar em <span>"Preciso Conversar".</span>
+            </p>
+            <p>E se você esta disposto a ser um "ouvido amigo", clique em <span>"Cadastrar".</span></p>
+            <p>Clique nas imagens abaixo e veja algumas <span>dicas.</span></p>
+        </div>
+    </div>
+    <div class="imagens">
+        <div class="item-imagem">
+            <img onclick="bt_card1()" src="assets/img/Feeling Blue-bro.png" alt="">
+        </div>
+        <div onclick="bt_card2()" class="item-imagem">
+            <img src="assets/img/Chat-amico.png" alt="">
+        </div>
+        <div onclick="bt_card3()" class="item-imagem">
+            <img src="assets/img/Live collaboration-amico.png" alt="">
+        </div>
+    </div>
+
+    <div style="display: none;" id="card1" class="secreto">
+        <div class="titulo">
+            <h1>Sentindo-se triste?</h1>
+        </div>
+      <h3>Dias ruins são completamente comuns, uma boa solução para essas ocasiões é
+          conversar com alguém, desabafar, falar do seu dia.
+          Nada melhor que alguém que está 100% disposto a te ouvir. 
+          <br>
+          #Dica 1: Clique em "Preciso conversar" e inicie uma conversa.
+      </h3>
+    </div>
+    <div style="display: none;" id="card2" class="secreto">
+        <div class="titulo">
+            <h1>Direto de casa</h1>
+        </div>
+      <h3>Você pode ajudar alguém diretamente do conforto da sua casa, basta apenas ouvir e
+          conversar normalmente.
+          <br>
+          Quer ajudar mas não sabe como começar uma conversa?
+          <br>
+          #Dica 2: Pergunte como foi o dia da pessoa.
+      </h3>
+    </div>
+    <div style="display: none;" id="card3" class="secreto">
+        <div class="titulo">
+            <h1>Uma mão lava a outra</h1>
+        </div>
+      <h3>Ajudando alguém você pode acabar se ajudando, alem de ouvir, você tambem pode
+          desabafar, conte suas experiências, de conselhos, mas é claro, respeite sempre os outros.
+          <br>
+          #Dica 3: Respeito é sempre necessário dentro de uma conversa.
+      </h3>
+    </div>
+    
+
+</body>
+
+</html>
+
+<script>
+    function bt_card1() {
+        card1.style.display = 'flex';
+        card2.style.display = 'none';
+        card3.style.display = 'none';
+    }
+
+    function bt_card2() {
+        card1.style.display = 'none';
+        card2.style.display = 'flex';
+        card3.style.display = 'none';
+    }
+
+    function bt_card3() {
+        card1.style.display = 'none';
+        card2.style.display = 'none';
+        card3.style.display = 'flex';
+    }
+</script>

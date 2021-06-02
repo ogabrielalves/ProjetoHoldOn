@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/Icone.png" type="image/x-icon">
+    <script src="assets/js/contato.js"></script>
+    <link rel="stylesheet" href="assets/css/contato.css">
+    <title>Contato</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="logo" class="col-3 col-sm-3 col-md-3">
+                <img src="assets/img/Logo.png" alt="">
+            </div>
+            <div id="barraNav" class="col-6 col-sm-6 col-md-6">
+                <nav>
+                    <li><a href="Index.html">INÍCIO</a></li>
+                    <li><a href="comofunciona.html">COMO FUNCIONA</a></li>
+                    <li><a href="meajude.html">PRECISO CONVERSAR </a></li>
+                    <li><span>CONTATO</span></li>
+                </nav>
+            </div>
+            <div id="botoes" class="col-3 col-sm-3 col-md-3">
+                <button class="entrar">Entrar</button>
+                <button class="cadastro">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="caixa-contato">
+            <div class="caixa-esquerda"></div>
+            <div class="caixa-direita">
+                <h2>Nos Contate</h2>
+                <input id="idNome" type="text" placeholder="Seu Nome Completo">
+                <input id="idEmail" type="email" placeholder="Seu Email">
+                <input id="idTelefone" type="tel" placeholder="Seu DDD + Telefone">
+                <textarea id="idMensagem" placeholder="Mensagem"></textarea>
+                <button onclick="enviar()" class="botaoEnviar">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
